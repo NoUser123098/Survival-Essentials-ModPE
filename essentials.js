@@ -7,9 +7,16 @@ var SV = android.widget.ScrollView;
 var PW = android.widget.PopupWindow;
 var Runnable = java.lang.Runnable;
 var Color = android.graphics.Color;
+var Gravity = android.view.Gravity;
 
 var trans = Color.TRANSPARENT;
 var red = Color.RED;
+
+var right = Gravity.RIGHT;
+var left = Gravity.LEFT;
+var center = Gravity.CENTER;
+var top = Gravity.TOP;
+var bottom = Gravity.BOTTOM
 
 var GUI;
 var menu;
