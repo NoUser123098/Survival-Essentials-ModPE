@@ -6,6 +6,10 @@ var RL = android.widget.RelativeLayout;
 var SV = android.widget.ScrollView;
 var PW = android.widget.PopupWindow;
 var Runnable = java.lang.Runnable;
+var Color = android.graphics.Color;
+
+var trans = Color.TRANSPARENT;
+var red = Color.RED;
 
 var GUI;
 var menu;
@@ -33,7 +37,7 @@ function newLevel(){
             layout.addView(menuBtn);
 
             GUI = new PW(layout, RL.LayoutParams.WRAP_CONTENT, RL.LayoutParams.WRAP_CONTENT);
-            GUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+            GUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(trans));
             GUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.BOTTOM, 0, 0);
         }catch(err){
             print("An error occured: " + err);
@@ -57,7 +61,7 @@ function mainMenu(){
             //Buttons
             
             menu = new android.widget.PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/2, ctx.getWindowManager().getDefaultDisplay().getHeight());
-            menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
+            menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(trans));
             menu.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
         }catch(error){
             print("An error occured: " + error);
@@ -73,7 +77,7 @@ function exit(){
 			
             var xButton = new Button(ctx);
             xButton.setText("x");
-            xButton.setTextColor(android.graphics.Color.WHITE);
+            xButton.setTextColor(red);
             xButton.setOnClickListener(new View.OnClickListener({
                 onClick: function(viewarg){
                     exitUI.dismiss();
@@ -83,7 +87,7 @@ function exit(){
             xLayout.addView(xButton);
 			
             exitUI = new PW(xLayout, dip2px(40), dip2px(40));
-            exitUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+            exitUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(trans));
             exitUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
         }catch(exception){
             print(exception);
