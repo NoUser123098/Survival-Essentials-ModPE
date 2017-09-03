@@ -48,7 +48,7 @@ function newLevel(){
 
             GUI = new PW(layout, RL.LayoutParams.WRAP_CONTENT, RL.LayoutParams.WRAP_CONTENT);
             GUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(trans));
-            GUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.BOTTOM, 0, 0);
+            GUI.showAtLocation(ctx.getWindow().getDecorView(), right | bottom, 0, 0);
         }catch(err){
             print("An error occured: " + err);
         }
@@ -69,11 +69,15 @@ function mainMenu(){
             menuLayout1.addView(menuScroll);
           
             var title = new TV(ctx);
-		    
+	    title.setTextSize(25);
+	    title.setText("Survival Essentials");
+	    title.setTextColor(dodgerblue);
+	    title.setGravity(center);
+	    menuLayout.addView(title);
             
             menu = new android.widget.PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/2, ctx.getWindowManager().getDefaultDisplay().getHeight());
             menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(trans));
-            menu.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
+            menu.showAtLocation(ctx.getWindow().getDecorView(), right | top, 0, 0);
         }catch(error){
             print("An error occured: " + error);
         }
@@ -99,7 +103,7 @@ function exit(){
 			
             exitUI = new PW(xLayout, dip2px(40), dip2px(40));
             exitUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(trans));
-            exitUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
+            exitUI.showAtLocation(ctx.getWindow().getDecorView(), right | top, 0, 0);
         }catch(exception){
             print(exception);
         }
