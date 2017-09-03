@@ -11,6 +11,9 @@ var Gravity = android.view.Gravity;
 
 var trans = Color.TRANSPARENT;
 var red = Color.RED;
+var blue = Color.BLUE;
+var green = Color.GREEN;
+var dodgerBlue = Color.parseColor("#1E90FF");
 
 var right = Gravity.RIGHT;
 var left = Gravity.LEFT;
@@ -65,7 +68,8 @@ function mainMenu(){
             menuScroll.addView(menuLayout);
             menuLayout1.addView(menuScroll);
           
-            //Buttons
+            var title = new TV(ctx);
+		    
             
             menu = new android.widget.PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/2, ctx.getWindowManager().getDefaultDisplay().getHeight());
             menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(trans));
